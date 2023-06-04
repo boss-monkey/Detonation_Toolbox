@@ -1,23 +1,23 @@
-%µÈìØÅòÕÍµ½Ö¸¶¨Ñ¹Á¦
+%ç­‰ç†µè†¨èƒ€åˆ°æŒ‡å®šå‹åŠ›
 function isentropic_cal = isentropic_cal_pressure(p_1, p_2, T_1 ,u_1, c, y, Mw, D)
 Ru = 8.314;
 Mm_1 = dot(c,Mw)/sum(c); 
 Mm_2 = dot(y,Mw)/sum(y); 
 
 max = 20;
-e=10^(-8);%Îó²î·¶Î§
-%% ¼ÆËã
-T_2 = 1000; %µü´ú³õÖµ
+e=10^(-8);%è¯¯å·®èŒƒå›´
+%% è®¡ç®—
+T_2 = 1000; %è¿­ä»£åˆå€¼
 for i=1:max
     f = S0_mix(T_2, y, D)/Ru- S0_mix(T_1, c, D)/Ru+log(p_1/p_2);
-    g = Cp_m(T_2,y, 1 ,D)/(Ru * T_2); %M_m»ìºÏÆøÌåÏà¶ÔÖÊÁ¿¸ø1
+    g = Cp_m(T_2,y, 1 ,D)/(Ru * T_2); %M_mæ··åˆæ°”ä½“ç›¸å¯¹è´¨é‡ç»™1
     T_k=T_2 - f/g;
     if abs(T_k - T_2)<e
         break
     end
     T_2=T_k;
 end
-%% Êä³ö
+%% è¾“å‡º
 u_2 = (2*(h0_m(T_1,c,Mm_1,D) + u_1^2/2 - h0_m(T_2,y,Mm_2,D)))^0.5;
 isentropic_cal = [T_2,p_2,u_2];
 
