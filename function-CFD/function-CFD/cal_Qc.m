@@ -1,8 +1,8 @@
-%alpha-QSS·½·¨¼ÆËãµ¥µãÉÏµÄ»¯Ñ§·´Ó¦
+%alpha-QSSæ–¹æ³•è®¡ç®—å•ç‚¹ä¸Šçš„åŒ–å­¦ååº”
 function cal = cal_Qc(t, rho, p, y_i, reaction,mix) 
 Ru = 8.31442;
 Rc = 1.98718;
-Ra = 82.057338;  %ºÍ´óÆøÑ¹Ïà¹ØµÄÆÕÊÊÆøÌå³£Êı£»
+Ra = 82.057338;  %å’Œå¤§æ°”å‹ç›¸å…³çš„æ™®é€‚æ°”ä½“å¸¸æ•°ï¼›
 
 v_1 = reaction.v_1; v_2 = reaction.v_2; A =reaction.A; beta = reaction.beta;
 Ea = reaction.Ea; Mr = reaction.Mr; nr =reaction.nr; nt =reaction.nt;
@@ -124,4 +124,4 @@ end
     gamma = cal_gamma_T(T,y_i,mix);
     R_1 =  sum(R_i.*y_i);
     
-cal = [rho*R_1*T,gamma,T,y_i];   %£¨p£¬T£¬gamma£¬y£©
+cal = [rho*R_1*T,gamma,T,y_i];   %ï¼ˆpï¼ŒTï¼Œgammaï¼Œyï¼‰
