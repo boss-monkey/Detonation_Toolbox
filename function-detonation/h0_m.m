@@ -1,4 +1,4 @@
-%混合气单位质量焓
+%禄矛潞脧脝酶碌楼脦禄脰脢脕驴矛脢
 function h0_m = h0_m(T, c, Mm ,D)
 data_cal = data_cal_vector(T,D);
 h0 =  data_cal(2,:);
