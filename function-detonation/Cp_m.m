@@ -1,4 +1,4 @@
-%混合气单位质量比热
+%禄矛潞脧脝酶碌楼脦禄脰脢脕驴卤脠脠脠
 function Cp_m = Cp_m(T, c, Mm ,D)
 data_cal = data_cal_vector(T,D);
 cp = data_cal(1,:);
