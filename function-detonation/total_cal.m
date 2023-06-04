@@ -1,4 +1,4 @@
-%È¼ÁÏÅçÉä²ÎÊýµÄ×ª»»,ÖÍÖ¹²ÎÊýÓë¾²²ÎÊýµÄ×ª»»
+%ç‡ƒæ–™å–·å°„å‚æ•°çš„è½¬æ¢,æ»žæ­¢å‚æ•°ä¸Žé™å‚æ•°çš„è½¬æ¢
 function total_cal = total_cal (c, Ma, T_t, Mw, D )
 Ru = 8.314;
 Mm = dot(c,Mw)/sum(c);
