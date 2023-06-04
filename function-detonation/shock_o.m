@@ -1,4 +1,4 @@
-%Ğ±¼¤²¨µÄ¼ÆËã£¬Èõ½â
+%æ–œæ¿€æ³¢çš„è®¡ç®—ï¼Œå¼±è§£
 function shock_o = shock_o(u_1, p_1,T_1, theta, Mm_1, Mm_2, c ,y ,D)
 
 Ru =8.314;
@@ -6,13 +6,13 @@ Rm_1 = Ru/Mm_1;
 Rm_2 = Ru/Mm_2;
 a_1 = a_s(T_1,Mm_1,Rm_1,c,D);
 miu = asin(a_1/u_1);
-beta_0 = theta+deg2rad(3);%ÆğÊ¼µã Èõ½â
+beta_0 = theta+deg2rad(3);%èµ·å§‹ç‚¹ å¼±è§£
 if theta >miu
     beta_0 = theta+deg2rad(0.5);
 end
 max_step = 100;
-e=10^(-6);%Îó²î·¶Î§
-%% ¼ÆËã
+e=10^(-6);%è¯¯å·®èŒƒå›´
+%% è®¡ç®—
 
 for i=1:max_step
     T_0 = 1 / Rm_2 *(Rm_1 *T_1 /(u_1*sin(beta_0)) +u_1*sin(beta_0)-...
@@ -39,7 +39,7 @@ for i=1:max_step
     beta_0=beta_1;
     
 end
-%% Êä³ö
+%% è¾“å‡º
 rho_1 = p_1/(Rm_1*T_1);
 T_2 = T_0;
 u_2 = (u_1*cos(beta_0)*tan(beta_0-theta))/sin(beta_0-theta);
