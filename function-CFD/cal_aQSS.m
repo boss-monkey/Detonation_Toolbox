@@ -1,7 +1,7 @@
 function cal = cal_aQSS(t, T, p, y_i, reaction,mix) 
 Ru = 8.31442;
 Rc = 1.98718;
-Ra = 82.057338;  %和大气压相关的普适气体常数；
+Ra = 82.057338;  %鍜屽ぇ姘斿帇鐩稿叧鐨勬櫘閫傛皵浣撳父鏁帮紱
 
 v_1 = reaction.v_1; v_2 = reaction.v_2; A =reaction.A; beta = reaction.beta;
 Ea = reaction.Ea; Mr = reaction.Mr; nr =reaction.nr; nt =reaction.nt;
