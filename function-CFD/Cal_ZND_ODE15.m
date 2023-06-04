@@ -1,37 +1,37 @@
-%% ±¬ºä²¨ZND½á¹¹Çó½â£¬»ùÓÚODE15
+%% çˆ†è½°æ³¢ZNDç»“æ„æ±‚è§£ï¼ŒåŸºäºODE15
 %author :Boss Monkey
 %Email : Baiht0201@nuaa.edu.cn 
 %%
 clear all %#ok<CLALL>
 load('data_nasa9.mat')
 load('.\molecular_w.mat') ;
-%% Êı¾İµ¼Èë
+%% æ•°æ®å¯¼å…¥
 [reaction,mix] = data_import(m_w,coeff_nasa9);
 m = mix.m; Mw =mix.Mw;D= mix.D;c_0 = mix.c_0; ns= mix.ns;
 Ru = 8.314;
 
-%% ³õÖµ
+%% åˆå€¼
 p_0 = 0.362*101325;
 T_0 = 298.15;
 u_0 = 2000;%1968.112805277358;
 Mm_0 = dot(c_0,Mw)/sum(c_0); 
 Rm_0 = Ru/Mm_0;
 rho_0 = p_0/(Rm_0 * T_0);
-%% ·ëÅ¦ÂüÌõ¼ş£¨ÓÕµ¼Õı¼¤²¨ºó²ÎÊı£©
+%% å†¯çº½æ›¼æ¡ä»¶ï¼ˆè¯±å¯¼æ­£æ¿€æ³¢åå‚æ•°ï¼‰
 s_1 = shock_n(u_0, p_0 ,T_0, Mm_0, Mm_0, c_0, c_0, D);    
 p_1 = s_1(2);
 T_1 = s_1(1);
 u_1 = s_1(3);
 rho_1 = p_1/(Rm_0*T_1);
-%% »ù±¾Á¿¼ÆËã
+%% åŸºæœ¬é‡è®¡ç®—
 R_i = Ru./ Mw;
-y_i = zeros(1,ns);   %¸÷×é·ÖÖÊÁ¿·ÖÊı
+y_i = zeros(1,ns);   %å„ç»„åˆ†è´¨é‡åˆ†æ•°
 for i = 1:ns
     y_i(i)=c_0(i)/dot(c_0,Mw) *Mw(i);
 end
 ma = u_1*rho_1;  %mass flux
 mo = u_1^2*rho_1 + p_1;
-%% Çó½âÎ¢·Ö·½³Ì
+%% æ±‚è§£å¾®åˆ†æ–¹ç¨‹
 flux = [ma, mo];
 y0 = [u_1,y_i]';
 tel = [0 0.004];
@@ -40,7 +40,7 @@ t0 = cputime;
 
 out = ode15s(@ode_ZND,tel,y0,options, reaction ,mix,flux,D);
 disp(['CPU time = ' num2str(cputime - t0)]);
-%% Êä³ö
+%% è¾“å‡º
 yt =  out.y(2:end,:);
 Rt = sum(R_i'.*yt);
 rhot = ma./out.y(1,:);
