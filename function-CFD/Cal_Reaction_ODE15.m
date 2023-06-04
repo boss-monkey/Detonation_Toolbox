@@ -1,4 +1,4 @@
-%% ÁãÎ¬È¼ÉÕ£¨µÈÈİ±¬Õ¨£©¼ÆËã£¬»ùÓÚODE15
+%% é›¶ç»´ç‡ƒçƒ§ï¼ˆç­‰å®¹çˆ†ç‚¸ï¼‰è®¡ç®—ï¼ŒåŸºäºODE15
 %author :Boss Monkey
 %Email : Baiht0201@nuaa.edu.cn 
 %%
@@ -9,7 +9,7 @@ load('.\molecular_w.mat') ;
 [reaction,mix] = data_import(m_w,coeff_nasa9);
 m = mix.m; Mw =mix.Mw;D= mix.D;c_0 = mix.c_0; ns= mix.ns;
 Ru = 8.314;
-%% ³õÖµ
+%% åˆå€¼
 p_0 = 101325;
 T_0 = 950;
 y_i= c_0 /dot(c_0,Mw).*Mw ;
@@ -17,7 +17,7 @@ R_i = Ru./ Mw;
 Rm_0 = dot(R_i,y_i);
 rho = p_0/(Rm_0 * T_0);
 
-%% Çó½âÎ¢·Ö·½³Ì
+%% æ±‚è§£å¾®åˆ†æ–¹ç¨‹
 tic
 y0 = [T_0,y_i]';
 tel = [0 0.001];
