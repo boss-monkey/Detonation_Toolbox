@@ -1,12 +1,12 @@
 function [reaction,mix] = data_import_12_23(m_w,coeff_nasa9)
 
-[~,m] = xlsread('H2-Air_12_23.xlsx','B1:M1');  %ÎïÖÊÃû³Æ
-c_0 = xlsread('H2-Air_12_23.xlsx','B27:M27');  %ÎïÖÊÄ¦¶ûÊı
-v_1 = xlsread('H2-Air_12_23.xlsx','B3:M25');   %·´Ó¦ÎïÏµÊı¾ØÕó
-v_2 = xlsread('H2-Air_12_23.xlsx','O3:Z25');   %Éú³ÉÎïÏµÊı¾ØÕó
-A = xlsread('H2-Air_12_23.xlsx','AB3:AB25');      %Ö¸Ç°Òò×Ó
-beta = xlsread('H2-Air_12_23.xlsx','AC3:AC25');   %ÎÂ¶ÈÖ¸Êı
-Ea = xlsread('H2-Air_12_23.xlsx','AD3:AD25');     %»î»¯ÄÜ
+[~,m] = xlsread('H2-Air_12_23.xlsx','B1:M1');  %ç‰©è´¨åç§°
+c_0 = xlsread('H2-Air_12_23.xlsx','B27:M27');  %ç‰©è´¨æ‘©å°”æ•°
+v_1 = xlsread('H2-Air_12_23.xlsx','B3:M25');   %ååº”ç‰©ç³»æ•°çŸ©é˜µ
+v_2 = xlsread('H2-Air_12_23.xlsx','O3:Z25');   %ç”Ÿæˆç‰©ç³»æ•°çŸ©é˜µ
+A = xlsread('H2-Air_12_23.xlsx','AB3:AB25');      %æŒ‡å‰å› å­
+beta = xlsread('H2-Air_12_23.xlsx','AC3:AC25');   %æ¸©åº¦æŒ‡æ•°
+Ea = xlsread('H2-Air_12_23.xlsx','AD3:AD25');     %æ´»åŒ–èƒ½
 Mr = xlsread('H2-Air_12_23.xlsx','AG3:AR8');
 G = xlsread('H2-Air_12_23.xlsx','AF3:AF25');
 m = string(m);
