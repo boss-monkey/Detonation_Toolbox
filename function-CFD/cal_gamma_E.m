@@ -1,12 +1,12 @@
-%Í¨¹ıÅ£¶Ù·½·¨¸ù¾İÆøÌåÄÚÄÜ£¨ÊØºãÁ¿£©Çó½â±ÈÈÈ±È
+%é€šè¿‡ç‰›é¡¿æ–¹æ³•æ ¹æ®æ°”ä½“å†…èƒ½ï¼ˆå®ˆæ’é‡ï¼‰æ±‚è§£æ¯”çƒ­æ¯”
 function gamma = cal_gamma_E(U,gamma0,y_i,mix)
 
     u =  U(:,2)./ U(:,1);
     e =  U(:,3)./ U(:,1) - 0.5 * u.^2;
     T0 = e.*(gamma0-1)./sum(y_i.*mix.R_i,2);
     N =length(T0);
-    data_cal_st = data_cal_vector(298.15,mix.D);                  %±ê×¼ÎÂ¶ÈÏÂÈÈÁ¦Ñ§ÏµÊı
-    h_i0 = (data_cal_st(2,:) - data_cal_st(1,:)*298.15)./mix.Mw;   %Éú³ÉìÊ
+    data_cal_st = data_cal_vector(298.15,mix.D);                  %æ ‡å‡†æ¸©åº¦ä¸‹çƒ­åŠ›å­¦ç³»æ•°
+    h_i0 = (data_cal_st(2,:) - data_cal_st(1,:)*298.15)./mix.Mw;   %ç”Ÿæˆç„“
     h_i = zeros(N,mix.ns);
     cv_i = zeros(N,mix.ns);
     
@@ -16,7 +16,7 @@ for j = 1:100
         h_i(i,:) = data_cal(2,:)./mix.Mw;
         cv_i(i,:) = data_cal(1,:)./mix.Mw - mix.R_i;
     end
-    h_star = h_i - h_i0 ;                                         % ÈÈìÊ
+    h_star = h_i - h_i0 ;                                         % çƒ­ç„“
     f = sum(y_i.*h_star,2)-sum(y_i.*mix.R_i,2).*T0 -e;
     g = sum(y_i.*(cv_i),2);
     T = T0 -f./g;
