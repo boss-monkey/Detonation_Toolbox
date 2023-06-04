@@ -1,12 +1,12 @@
-%Ð±¼¤²¨µÄ¼ÆËã£¬Ç¿½â
+%æ–œæ¿€æ³¢çš„è®¡ç®—ï¼Œå¼ºè§£
 function shock_o = shock_o_strong_solution(u_1, p_1,T_1, theta, Mm_1, Mm_2, c ,y ,D)
-beta_0 = deg2rad(90)-deg2rad(theta)/5;%ÆðÊ¼µã Ç¿½â
+beta_0 = deg2rad(90)-deg2rad(theta)/5;%èµ·å§‹ç‚¹ å¼ºè§£
 Ru =8.314;
 Rm_1 = Ru/Mm_1;
 Rm_2 = Ru/Mm_2;
 max = 100;
-e=10^(-6);%Îó²î·¶Î§
-%% ¼ÆËã
+e=10^(-6);%è¯¯å·®èŒƒå›´
+%% è®¡ç®—
 
 for i=1:max
     T_0 = 1 / Rm_2 *(Rm_1 *T_1 /(u_1*sin(beta_0)) +u_1*sin(beta_0)-...
@@ -33,7 +33,7 @@ for i=1:max
     beta_0=beta_1;
     
 end
-%% Êä³ö
+%% è¾“å‡º
 rho_1 = p_1/(Rm_1*T_1);
 T_2 = T_0;
 u_2 = (u_1*cos(beta_0)*tan(beta_0-theta))/sin(beta_0-theta);
