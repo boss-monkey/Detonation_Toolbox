@@ -1,7 +1,7 @@
-%% ÁãÎ¬È¼ÉÕ£¨µÈÈİ±¬Õ¨£©¼ÆËã£¬»ùÓÚalpha-QSS·½·¨
+%% é›¶ç»´ç‡ƒçƒ§ï¼ˆç­‰å®¹çˆ†ç‚¸ï¼‰è®¡ç®—ï¼ŒåŸºäºalpha-QSSæ–¹æ³•
 %author :Boss Monkey
 %Email : Baiht0201@nuaa.edu.cn 
-%²Î¿¼ÎÄÏ× A Quasi-Steady-State Solver for the Stiff Ordinary Differential Equations of Reaction Kinetics
+%å‚è€ƒæ–‡çŒ® A Quasi-Steady-State Solver for the Stiff Ordinary Differential Equations of Reaction Kinetics
          %A Solver for the Stiff Ordinary Differential Equations of Reaction Kinetics
 %%
 clear all %#ok<CLALL>
