@@ -1,6 +1,6 @@
 function [A_sgn] = U2A_sgn(U, j, sgn, gamma)
 % U: [rho, rho*u, E]
-% global gamma    %全局变量降低速度
+% global gamma    %脠芦戮脰卤盲脕驴陆碌碌脥脣脵露脠
 
 rho = U(j,1);
 u   = U(j,2)/U(j,1);
